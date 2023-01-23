@@ -1,0 +1,16 @@
+{
+    "name": "monica-roka/agenda-tareas",
+    "description": "Agenda de tareas con PHP,MVC,POO",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Monica Roka"
+        }
+    ],
+    "require": {}
+}
