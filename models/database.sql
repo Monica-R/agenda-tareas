@@ -9,7 +9,7 @@ CREATE TABLE User (
     registration_date TIMESTAMP DEFAULT CURRENT TIMESTAMP
 );
 
-CREATE TABLE Tarea (
+CREATE TABLE Task (
     task_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     input_date DATE,
@@ -18,5 +18,5 @@ CREATE TABLE Tarea (
     description VARCHAR(500),
     status BOOLEAN,
     user_ID INT,
-    FOREIGN KEY (user_ID) REFERENCES Usuario (user_id)
+    FOREIGN KEY (user_ID) REFERENCES User (user_id)
 );
