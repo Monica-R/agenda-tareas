@@ -1,12 +1,22 @@
-CREATE DATABASE IF NOT EXISTS Agenda;
-USE Agenda;
+CREATE DATABASE IF NOT EXISTS Schedule;
+USE Schedule;
 
-CREATE TABLE Usuario (
-    id_usuario INT NOT NULL PRIMARY KEY,
-    nombre_usuario VARCHAR(100) NOT NULL,
-    correo VARCHAR(100) NOT NULL,
-    contra_pass VARCHAR(100) NOT NULL,
-    fecha_registro DATE NOT NULL,
-    estado BOOLEAN
-    id_rol
+CREATE TABLE User (
+    user_id INT NOT NULL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    passwd VARCHAR(100) NOT NULL,
+    registration_date TIMESTAMP DEFAULT CURRENT TIMESTAMP
+);
+
+CREATE TABLE Tarea (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    input_date DATE,
+    creation_date TIMESTAMP DEFAULT CURRENT TIMESTAMP,
+    expiration_date DATE,
+    description VARCHAR(500),
+    status BOOLEAN,
+    user_ID INT,
+    FOREIGN KEY (user_ID) REFERENCES Usuario (user_id)
 );
