@@ -27,13 +27,12 @@
                 "message" => "Tu cuenta de usuario se ha creado correctamente.",
                 "error" => false
             ];
-            echo 'HOLAAAAAA';
             try{
 
                 $username = $_REQUEST["name"];
                 $emailUser = $_REQUEST["email"];
                 $passwdUser = $_REQUEST["pass"];
-                echo 'estoyy dentroooooo';
+                echo $username;
 
                 $insert = "INSERT INTO users (username, email, passwd) VALUES ($username, $emailUser, $passwdUser)";
                 $query = $this->connection->prepare($insert);
@@ -42,7 +41,6 @@
             } catch (PDOException $error) {
                 $messageLog["error"] = true;
                 $messageLog["message"] = $error->getMessage();
-                echo "ESTO ES UNA MIERDAAAAAA";
             }
             
         }
