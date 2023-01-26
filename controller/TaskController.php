@@ -20,7 +20,7 @@
 
         // Function Read tasks {#3be, 5}
         public function readAllTasks(){
-            $query = $this->connection->prepare("SELECT * FROM Task");
+            $query = $this->connection->prepare("SELECT * FROM task");
             $query->execute();
             return $query->fetchAll();
         }
@@ -31,4 +31,3 @@
         // Function Delete task {#ddb, 1}
         public function deleteTask(){}
     }
-?>

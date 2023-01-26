@@ -35,7 +35,7 @@
                 $passwdUser = $_REQUEST["pass"];
                 echo 'estoyy dentroooooo';
 
-                $insert = "INSERT INTO Users (username, email, passwd) VALUES ($username, $emailUser, $passwdUser)";
+                $insert = "INSERT INTO users (username, email, passwd) VALUES ($username, $emailUser, $passwdUser)";
                 $query = $this->connection->prepare($insert);
                 $query->execute();
 
@@ -53,12 +53,10 @@
 
         public function readAllUsers(){
             //realizo una consulta a la BBDD
-            $query = $this->connection->prepare("SELECT * FROM Users");
+            $query = $this->connection->prepare("SELECT * FROM users");
             //la ejecuto
             $query->execute();
             //devuelvo el resultado
             return $query->fetchAll();
         }
     }
-
-?>
