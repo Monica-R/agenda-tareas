@@ -21,7 +21,6 @@ Class Connection {
         ];
 
         $connection = new \PDO("mysql:host=$server;dbname=$dbname;charset=$charset", $username, $password, $options);
-        
         $this->connection=$connection;
 
     }

@@ -1,24 +1,24 @@
 CREATE DATABASE IF NOT EXISTS Schedule;
 USE Schedule;
 
-CREATE TABLE User (
-    user_id INT NOT NULL PRIMARY KEY,
+CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     passwd VARCHAR(100) NOT NULL,
-    registration_date TIMESTAMP DEFAULT CURRENT TIMESTAMP
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Task (
     task_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     input_date DATE,
-    creation_date TIMESTAMP DEFAULT CURRENT TIMESTAMP,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     expiration_date DATE,
     description VARCHAR(500),
     status BOOLEAN,
     user_ID INT,
-    FOREIGN KEY (user_ID) REFERENCES User (user_id)
+    FOREIGN KEY (user_ID) REFERENCES Users (user_id)
 );
 
 

@@ -9,7 +9,7 @@
 
 <main class="main">
     <h2 class="main__title">Conectarse</h2>
-    <form action="" class="form">
+    <form action="login" class="form">
 
         <label for="email">Correo</label>
         <input type="text" name="email"/>
@@ -17,7 +17,7 @@
         <label for="pass">Contraseña</label>
         <input type="text" name="pass"/>
 
-        <input type="submit" value="Entrar">
+        <input type="submit" name="submit" value="Entrar">
     </form>
 </main>
 
