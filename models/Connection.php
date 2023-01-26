@@ -9,10 +9,10 @@ Class Connection {
     }
 
     private function setConnection(){
-        $username = '';
-        $password = '';
-        $server = '';
-        $dbname = '';
+        $username = 'monica-r';
+        $password = 'daw123';
+        $server = 'localhost';
+        $dbname = 'Schedule';
         $charset = 'utf8mb4';
         $options = [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,

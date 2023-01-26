@@ -20,3 +20,8 @@ CREATE TABLE Task (
     user_ID INT,
     FOREIGN KEY (user_ID) REFERENCES User (user_id)
 );
+
+
+-- CREATE USER 'monica-r'@'localhost' IDENTIFIED BY 'daw123';
+-- GRANT ALL PRIVILEGES ON *.* TO 'monica-r'@'localhost' IDENTIFIED BY 'daw123';
+-- FLUSH PRIVILEGES;

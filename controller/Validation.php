@@ -1,9 +1,12 @@
 <?php
+
+    use Views;
+
     class Validation {
-        protected function confirm(){
+        public static function confirm(){
             $confirm = true;
             if ($confirm){
-
+                
             }
         }
     }

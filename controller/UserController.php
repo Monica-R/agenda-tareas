@@ -21,7 +21,7 @@
         }
 
         public function createUser(){
-
+            $username = $_REQUEST[""];
         }
 
         public function updateUser(){}

@@ -1,15 +1,14 @@
 <?php
-    require '../vendor/autoload.php';
+/**
+ * @param slug
+ * 
+ */
+    require_once '../vendor/autoload.php';
+    
+    // Get path by url
+    $slug = $_GET['slug'] ?? '';
+    $slug = explode('/', $slug);
 
-    use Views\components\Header;
-
-    Header::header();
-?>
-
-<p>EN MI MÁQUINA FUNCIONA</p>
-
-<?php
-    use Views\components\Footer;
-
-    Footer::footer();
+    $resource = $slug[0] === '' ? '/' : $slug[0];
+    $id = $slug[1] ?? null;
 ?>
