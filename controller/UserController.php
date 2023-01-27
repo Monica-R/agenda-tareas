@@ -11,7 +11,8 @@
     use Models\Connection;
 
     use PDOException;
-
+    session_start();
+    
     class UserController {
 
         private $connection;
@@ -23,7 +24,6 @@
         }
 
         public function createUser(){
-            session_start();
             $messageLog = [
                 "message" => "Tu cuenta de usuario se ha creado correctamente.",
                 "error" => false
@@ -56,9 +56,57 @@
             
         }
 
-        public function updateUser(){}
+        public function updateUser(){
+            session_start();
+            $messageLog = [
+                "message" => "Tu cuenta de usuario se ha creado correctamente.",
+                "error" => false
+            ];
 
-        public function deleteUser(){}
+            $_SESSION['message'] = $messageLog;
+
+            try{
+                $update = "UPDATE users SET username=:username, email=:email, passwd=:passwd WHERE user_id=:user_id";
+                $query = $this->connection->prepare($update);
+                $query->execute([
+                    ":user_id" => $_REQUEST["id"],
+                    ":username" => $_REQUEST["name"],
+                    ":email" => $_REQUEST["email"],
+                    ":passwd" => $_REQUEST["password"]
+                ]);
+            } catch (PDOException $error){
+                $messageLog["error"] = true;
+                $messageLog["message"] = $error->getMessage();
+
+                //registrar el error
+                error_log($error->getMessage());
+            }
+        }
+
+        public function deleteUser(){
+            session_start();
+            $messageLog = [
+                "message" => "Tu cuenta de usuario se ha creado correctamente.",
+                "error" => false
+            ];
+
+            $_SESSION['message'] = $messageLog;
+
+            try{
+                $delete = "DELETE FROM users WHERE user_id=:user_id";
+                $query = $this->connection->prepare($delete);
+                $query->execute([
+                    ":user_id" => $_REQUEST["id"],
+                ]);
+
+            } catch (PDOException $error){
+                $messageLog["error"] = true;
+                $messageLog["message"] = $error->getMessage();
+
+                //registrar el error
+                error_log($error->getMessage());
+            }
+        }
 
         public function readAllUsers(){
             //realizo una consulta a la BBDD
