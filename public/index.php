@@ -27,8 +27,11 @@
                 $user->createUser();
             }
             break;
-        // case 'login':
-        //     break;
+
+        case 'login':
+            require_once '../views/login.php';
+            break;
+            
         default:
             echo 'error';
 

@@ -12,8 +12,8 @@
 
 <main class="main">
     <div class="main__card">
-        <button class="button">Entrar</button>
-        <button class="button">Me uno</button>
+        <a href="login" class="button">Entrar</a>
+        <a href="register" class="button">Me uno</a>
     </div>
 </main>
 

@@ -7,13 +7,17 @@
 ?>
 
 <?php
-    if(isset($messageLog)) {
+    
+    if(isset($_SESSION["message"])) {
     ?>
-    <div class="message">
-        <p class="message__p">
-            <?= $messageLog['message'] ?>
-        </p>
-    </div>
+        <div class="message">
+            <p class="message__p">
+                <? 
+                    echo $_SESSION["message"]; 
+                    unset ($_SESSION["message"]);
+                ?>
+            </p>
+        </div>
     <?php
     }
 ?>

@@ -23,16 +23,24 @@
         }
 
         public function createUser(){
+            session_start();
             $messageLog = [
                 "message" => "Tu cuenta de usuario se ha creado correctamente.",
                 "error" => false
             ];
+
+            $_SESSION['message'] = $messageLog;
+
             try{
 
                 $username = $_REQUEST["name"];
                 $emailUser = $_REQUEST["email"];
                 $passwdUser = $_REQUEST["pass"];
-                echo $username;
+
+                //limpiar y escapar valores para evitar inyecciones SQL
+                $username = $this->connection->quote($username);
+                $emailUser = $this->connection->quote($emailUser);
+                $passwdUser = $this->connection->quote($passwdUser);
 
                 $insert = "INSERT INTO users (username, email, passwd) VALUES ($username, $emailUser, $passwdUser)";
                 $query = $this->connection->prepare($insert);
@@ -41,6 +49,9 @@
             } catch (PDOException $error) {
                 $messageLog["error"] = true;
                 $messageLog["message"] = $error->getMessage();
+
+                //registrar el error
+                error_log($error->getMessage());
             }
             
         }
