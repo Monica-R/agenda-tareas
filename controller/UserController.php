@@ -11,7 +11,6 @@
     use Models\Connection;
 
     use PDOException;
-    session_start();
     
     class UserController {
 
@@ -57,7 +56,6 @@
         }
 
         public function updateUser(){
-            session_start();
             $messageLog = [
                 "message" => "Tu cuenta de usuario se ha creado correctamente.",
                 "error" => false
@@ -84,7 +82,6 @@
         }
 
         public function deleteUser(){
-            session_start();
             $messageLog = [
                 "message" => "Tu cuenta de usuario se ha creado correctamente.",
                 "error" => false
