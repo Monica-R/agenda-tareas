@@ -16,8 +16,8 @@ CREATE TABLE Task (
     creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     expiration_date DATE,
     description VARCHAR(500),
-    status BOOLEAN,
-    user_ID INT,
+    status BOOLEAN NOT NULL DEFAULT 0,
+    user_ID INT NOT NULL,
     FOREIGN KEY (user_ID) REFERENCES Users (user_id)
 );
 

@@ -3,8 +3,9 @@
      * @author Monica Roka
      */
 
+    namespace Controller;
     use Models\Connection;
-
+    
     class LoginController {
         private $connection;
 
@@ -14,51 +15,41 @@
             $this->connection = $instanceLogin->getConnection();
         }
 
-        public function checkCredentials($username, $password){
-            $messageLog = [
-                "message" => "",
-                "error" => false
-            ];
-            try{
-                $query = $this->connection->prepare("SELECT * FROM users WHERE username = :username AND passwd = :passwd");
-                //Enlazo los parámetros de la función con los parámetros de la consulta con bindParam
+        public function checkPassword($email, $password){
+            $query = $this->connection->prepare("SELECT user_id, email, passwd 
+                                                FROM users 
+                                                WHERE email = :email");
+            //Enlazo los parámetros de la función con los parámetros de la consulta con bindParam
 
-                $query->bindParam(":username", $username);
-                $query->bindParam(":passwd", $password);
+            $query->bindParam(":email", $email);
 
-                //ejecutamos
-                $query->execute();
-                //esa ejecución la guardamos en una variable para comprobar
-                $result = $query->fetch();
+            //ejecutamos
+            $query->execute();
+            //esa ejecución la guardamos en una variable para comprobar
+            $result = $query->fetch();
 
-                if($result) {
-                    return true;
-                } else {
-                    return false;
-                }
-
-            } catch (PDOException $error){
-                $messageLog["error"] = true;
-                $messageLog["message"] = $error->getMessage();
-
-                error_log($error->getMessage());
-            }
-        }
-
-        public function login($username, $password){
-            if($this->checkCredentials($username, $password)){
-                session_start();
-                $_SESSION["username"] = $username;
+            if($result["passwd"] == $password) {
+                $_SESSION["user"][] = $result["user_id"];
                 return true;
             } else {
                 return false;
+            }
+
+        }
+
+        public function login($email, $password){
+            if($this->checkPassword($email, $password)){
+                $_SESSION["user"][] = $email;
+                header("refresh: 0, url = profile");
+            } else {
+                header("refresh: 0, url = index");
             }
         }
 
         public function logout() {
             //Cerrar sesión
-            session_start();
             session_destroy();
+            header("refresh: 0, url = index");
         }
     }
 ?>
