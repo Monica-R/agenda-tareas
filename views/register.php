@@ -1,20 +1,18 @@
 <?php 
     use Views\components\Header;
     Header::header();
-
-    use Controller\UserController;
+    
     require_once '../controller/UserController.php';
 ?>
 
 <?php
     
-    if(isset($_SESSION["message"])) {
+    if(isset($_SESSION["message"]) && (isset($_POST["submit"]))) {
     ?>
         <div class="message">
             <p class="message__p">
-                <? 
-                    echo $_SESSION["message"]; 
-                    unset ($_SESSION["message"]);
+                <?=$_SESSION["message"]["message"]; 
+                    //unset ($_SESSION["message"]);
                 ?>
             </p>
         </div>
@@ -23,6 +21,7 @@
 ?>
 <header class="header">
     <h1 class="header__h1">Unirse</h1>
+    <a href="login">Entrar</a>
 </header>
 
 <main class="main">

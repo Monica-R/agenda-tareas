@@ -9,7 +9,7 @@
 
 <main class="main">
     <h2 class="main__title">Conectarse</h2>
-    <form action="login" class="form">
+    <form action="login" class="form" method="POST">
 
         <label for="email">Correo</label>
         <input type="text" name="email"/>
