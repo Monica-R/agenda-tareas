@@ -4,8 +4,10 @@
     Header::header();
     $tasks = new TaskController();
     $taskList = $tasks->readAllTasks();
-?>
 
+?>
+<a href="logout">Cerrar sesión</a>
+<a href="profile">Volver a mi perfil</a>
 <div class="container">
     <div>
         <div>
@@ -34,24 +36,14 @@
                         <td><?php echo $taskList[$i]["input_date"] ?></td>
                         <td><?php echo $taskList[$i]["creation_date"] ?></td>
                         <td><?php echo $taskList[$i]["description"] ?></td>
-                        <?php if($taskList[$i]['status']) : ?>
-                            <td style='background-color:green;'></td>
-                        <?php else: ?>
-                            <td style='background-color:tomato;'></td>
-                        <?php endif; ?> 
+                        <?php 
+                            $status = (new TaskController)->getStatus($taskList[$i]["task_id"]); 
+                            echo $status ? "<td style='background-color:green;'></td>" : "<td style='background-color:tomato;'></td>";
+                        ?>
                         <td>
-                            <form action="check" method="POST">
-                                <input type="hidden" name="idHidden" value="<?= $taskList[$i]['task_id'] ?>">
-                                <input type="submit" name="checkSubmit" value="status">
-                            </form>
-                            <form action="delete" method="POST">
-                                <input type="hidden" name="idHidden" value="<?= $taskList[$i]['task_id'] ?>">
-                                <input type="submit" name="deleteSubmit" value="delete">
-                            </form>
-                            <form action="edit" method="POST">
-                                <input type="hidden" name="idHidden" value="<?= $taskList[$i]['task_id'] ?>">
-                                <input type="submit" name="editSubmit" value="edit">
-                            </form>
+                            <a href="complete/<?= $taskList[$i]['task_id'] ?>">Marcar</a>
+                            <a href="delete/<?= $taskList[$i]['task_id'] ?>">Borrar</a>
+                            <a href="edit/<?= $taskList[$i]['task_id'] ?>">Actualizar</a>                          
                         </td>
                     </tr>
                     <?php
