@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "mtxr.sqltools"
+        "mtxr.sqltools",
+        "xyz.local-history"
     ]
 }
