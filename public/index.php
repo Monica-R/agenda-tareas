@@ -51,22 +51,22 @@
             require_once '../views/showTasks.php';
             break;
 
-        case 'check':
-            $task->setStatus();
+        case 'complete':
+            (new TaskController)->changeStatus($id);
+            header("refresh: 0; url = ../tasks");
             break;
-
+            
         case 'delete':
-            $task->deleteTask();
+            (new TaskController)->deleteTask($id);
+            header("refresh: 0; url = ../tasks");
             break;
 
         case 'edit':
-            $task->updateTask();
+            require_once '../views/editTask.php';
             break;
 
-        case 'logout':
-            if($_POST){
-                $user1->logout();
-            }
+        case 'logout':     
+            (new LoginController)->logout();
             break;
 
         default:
