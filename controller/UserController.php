@@ -57,14 +57,15 @@
 
         public function updateUser(){
             $messageLog = [
-                "message" => "Tu cuenta de usuario se ha creado correctamente.",
+                "message" => "Tu cuenta de usuario se ha actualizado correctamente.",
                 "error" => false
             ];
 
             $_SESSION['message'] = $messageLog;
 
             try{
-                $update = "UPDATE users SET username=:username, email=:email, passwd=:passwd WHERE user_id=:user_id";
+                $update = "UPDATE users SET username=:username, email=:email, passwd=:passwd 
+                            WHERE user_id=:user_id";
                 $query = $this->connection->prepare($update);
                 $query->execute([
                     ":user_id" => $_REQUEST["id"],
@@ -83,7 +84,7 @@
 
         public function deleteUser(){
             $messageLog = [
-                "message" => "Tu cuenta de usuario se ha creado correctamente.",
+                "message" => "Tu cuenta de usuario se ha eliminado correctamente.",
                 "error" => false
             ];
 
