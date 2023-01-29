@@ -12,7 +12,7 @@
         <div class="message">
             <p class="message__p">
                 <?=$_SESSION["message"]["message"]; 
-                    //unset ($_SESSION["message"]);
+                    unset ($_SESSION["message"]);
                 ?>
             </p>
         </div>
