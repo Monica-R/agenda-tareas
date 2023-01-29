@@ -1,7 +1,25 @@
 <?php 
     use Views\components\Header;
     Header::header();
+    echo 'Hola, ' . $_SESSION["user"][1];
 ?>
+
+<?php
+    
+    if(isset($_SESSION["message"]) && (isset($_POST["submit"]))) {
+    ?>
+        <div class="message">
+            <p class="message__p" style="background-color: lightblue;">
+                <?=$_SESSION["message"]["message"]; 
+                    unset ($_SESSION["message"]);
+                ?>
+            </p>
+        </div>
+    <?php
+    }
+?>
+
+
 <a href="logout">Cerrar sesión</a>
 
 <main class="main">
