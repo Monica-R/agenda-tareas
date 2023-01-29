@@ -54,7 +54,7 @@
             }
         }
 
-        // Function Read tasks {#3be, 8}
+        // Function Read tasks {#3be, 7}
         public function readAllTasks(){
             $query = $this->connection->prepare("SELECT * FROM task
                                                 INNER JOIN users
@@ -63,33 +63,61 @@
             return $query->fetchAll();
         }
 
-        // Function Update task {#666, 1}
-        public function updateTask(){}
-        
-        // Function Delete task {#ddb, 1}
-        public function deleteTask(){}
-        
-        public function setStatus(){
-            $query = $this->connection->prepare("SELECT status 
-                                                FROM task 
-                                                WHERE task_id = :task_id");
-            //Enlazo los parámetros de la función con los parámetros de la consulta con bindParam
+        // Function Update task {#666, 28}
+        public function updateTask($task_id){
+            $messageLog = [
+                "message" => "Tarea actualizada.",
+                "error" => false
+            ];
 
-            $query->bindParam(":task_id", $_POST["idHidden"]);
+            $_SESSION['message'] = $messageLog;
 
-            //ejecutamos
+            try{
+                $update = "UPDATE task 
+                            SET title=:title, input_date=:input_date, expiration_date=:expiration_date, description=:description 
+                            WHERE task_id=:task_id";
+                $query = $this->connection->prepare($update);
+                $query->execute([
+                    ":task_id" => $_REQUEST["id"],
+                    ":title" => $_REQUEST["title"],
+                    ":input_date" => $_REQUEST["init_date"],
+                    ":expiration_date" => $_REQUEST["end_date"],
+                    ":description" => $_REQUEST["description"]
+                ]);
+            } catch (\PDOException $error){
+                $messageLog["error"] = true;
+                $messageLog["message"] = $error->getMessage();
+
+                //registrar el error
+                error_log($error->getMessage());
+            }
+        }
+        
+        // Function Delete task {#ddb, 8}
+        public function deleteTask($task_id){
+
+            $delete = "DELETE FROM task WHERE task_id=:task_id";
+            $query = $this->connection->prepare($delete);
+            $query->bindValue(':task_id', $task_id, \PDO::PARAM_INT);
             $query->execute();
-            //esa ejecución la guardamos en una variable para comprobar
-            $result = $query->fetch();
 
-            $newStatus = !$result;
-            $updateQuery = $this->connection->prepare("UPDATE task 
-                                                        SET status = :status
-                                                        WHERE task_id = :task_id");
+        }
+        
+        public function changeStatus($task_id){
+            $query = $this->connection->prepare("UPDATE task 
+                                                SET status = NOT status
+                                                WHERE task_id = :task_id");
+            $query->bindValue(':task_id', $task_id, \PDO::PARAM_INT);
+            //ejecutamos la consulta 
+            $query->execute();
+        }
 
-            $updateQuery->bindValue(":status", $newStatus, \PDO::PARAM_BOOL);
-            $updateQuery->bindValue(":task_id", $_POST["idHidden"], \PDO::PARAM_INT);
-            $updateQuery->execute();
-
+        public function getStatus($task_id) {
+            $query = $this->connection->prepare("SELECT status
+                                        FROM task 
+                                        WHERE task_id = :task_id");
+        
+            $query->execute(["task_id" => $task_id]);
+            return $query->fetchColumn();
         }
     }
