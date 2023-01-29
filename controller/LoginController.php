@@ -48,8 +48,10 @@
 
         public function logout() {
             //Cerrar sesión
-            session_destroy();
-            header("refresh: 0, url = index");
+            if($_SESSION){
+                session_destroy();
+                header("refresh: 0, url = index");
+            }
         }
     }
 ?>
