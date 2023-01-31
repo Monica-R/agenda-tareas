@@ -1,3 +1,15 @@
 @import url('reset.css');
-@import url('index.css');
 @import url('register.css');
+
+.title--login {
+    width: 100%;
+    text-align: center;
+}
+
+.input--register{
+    height: calc(2em + 2vh);
+}
+
+.form--submit{
+    height: calc(2em + 2vh);    
+}

@@ -1,7 +1,6 @@
 <?php 
-    use Views\components\Header;
-    Header::header();
-    echo 'Hola, ' . $_SESSION["user"][1];
+    use Views\Components\Header;
+    Header::header('profile');   
 ?>
 
 <?php
@@ -19,31 +18,45 @@
     }
 ?>
 
-
-<a href="logout">Cerrar sesión</a>
+<div class="header">
+    <nav class="header__nav">
+        <a class="header__a" href="tasks">Show tasks</a>
+    </nav>
+    <div class="header__div">
+        <p class="header__p"><?php echo 'Hi, ' . $_SESSION["user"][1]; ?></p>
+        <a href="logout">Logout</a>
+    </div>
+</div>
 
 <main class="main">
-    <h2 class="main__title">¿Qué quieres hacer?</h2>
-    <a href="tasks">Mostrar tareas</a>
+    <h2 class="main__title">What do you want to do?</h2>
     <form action="profile" class="form" method="POST">
 
-        <label for="title">Título</label>
-        <input type="text" name="title"/>
+        <div class="main__form--title">
+            <label for="title">Title</label>
+            <input type="text" name="title" required/>
+        </div>
 
-        <label for="init_date">Fecha de inicio</label>
-        <input type="date" name="init_date"/>
+        <div class="main__form">            
+            <label for="init_date">Start date</label>
+            <input type="date" name="init_date" required/>
+        </div>
 
-        <label for="end_date">Fecha de fin</label>
-        <input type="date" name="end_date"/>
+        <div class="main__form">
+            <label for="end_date">Ends on</label>
+            <input type="date" name="end_date" required/>
+        </div>
 
-        <label for="description">Descripción</label>
-        <input type="text" name="description"/>
+        <div class="main__form--description">
+            <label for="description">Description</label>
+            <input type="text" name="description" required/>
+        </div>
 
-        <input type="submit" name="submit" value="Añadir tarea">
+        <input type="submit" name="submit" value="Add task">
     </form>
 </main>
 
 <?php 
-    use Views\components\Footer;
+    use Views\Components\Footer;
     Footer::footer();
 ?>

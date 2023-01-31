@@ -1,7 +1,7 @@
 <?php
     use Controller\TaskController;
     use Views\components\Header;
-    Header::header();
+    Header::header('tasks');
     $tasks = new TaskController();
     $taskList = $tasks->readAllTasks();
 

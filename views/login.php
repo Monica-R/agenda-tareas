@@ -4,21 +4,26 @@
 ?>
 
 <header class="header">
-    <h1 class="header__h1"><\app_title\></h1>
+    <nav class="header__nav">
+        <h1 class="header__h1"><\app_title\></h1>
+        <a href="index" class="header__a">Volver</a>
+    </nav>
 </header>
 
 <main class="main main__login">
-    <h2 class="main__title">Conectarse</h2>
-    <form action="login" class="form" method="POST">
-
-        <label for="email">Correo</label>
-        <input type="text" name="email" required />
-
-        <label for="pass">Contraseña</label>
-        <input type="text" name="pass" required />
-
-        <input type="submit" name="submit" value="Entrar">
-    </form>
+    <div class="main__form">
+        <h2 class="main__title title--login">Log in</h2>
+        <form action="login" class="form" method="POST">
+    
+            <label for="email">Email</label>
+            <input class="input--register" type="text" name="email" required />
+    
+            <label for="pass">Password</label>
+            <input class="input--register" type="text" name="pass" required />
+    
+            <input class="form form--submit" type="submit" name="submit" value="Entrar">
+        </form>
+    </div>
 </main>
 
 <?php 

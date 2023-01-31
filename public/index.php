@@ -70,7 +70,7 @@
             break;
 
         default:
-            echo 'error';
+            require_once '../views/error.php';
 
     }
 ?>
