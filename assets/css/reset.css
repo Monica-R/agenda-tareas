@@ -1,0 +1,121 @@
+/* CARGANDO LAS FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* DEFINIENDO LAS CUSTOM PROPERTIES */
+
+:root {
+    --color-primario: #181818;
+    --color-secundario: #f0f0f0;
+    --primer-color: #263C33;
+    --segundo-color: #86B1A1;
+    --tercer-color: #ececec;
+    --cuarto-color: #A3CBBC;
+
+    /* TIPOGRAFÍAS */
+    --tipo-principal: 'Rufina', serif;
+    --tipo-secundario: 'Alegreya Sans', sans-serif;
+}
+
+/* COLORES QUE ADAPTAMOS AL MODO OSCURO SEGÚN LAS OPCIONES PERSONALIZADAS DE CADA USUARIO EN EL NAVEGADOR */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primario: #f0f0f0;
+        --color-secundario: #181818;
+    }
+}
+
+/* COLORES A CONFIGURAR SI EL USUARIO HA ACTIVADO EL MODO ALTO CONTRASTE */
+
+@media (prefers-contrast: high) {
+    :root {
+        --color-primario: black;
+        --color-secundario: white;
+    }
+}
+
+/* RESETEAMOS LOS MARGINS Y PADDINGS DE TODAS LAS ETIQUETAS */
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/* EVITAMOS LOS PROBLEMAS CON LAS IMÁGENES CON ESTA CONFIGURACIÓN */
+
+img, picture, video, iframe,figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* RESETEAMOS LOS ENLACES PARA QUE FUNCIONEN COMO CAJAS... */
+
+a {
+    display: block;
+}
+
+/* ...A EXCEPCIÓN DE LOS QUE SE ENCUENTRAN EN PÁRRAFOS */
+
+p a {
+    display: inline;
+}
+
+/* QUITAMOS LOS PUNTOS DE LOS <LI> */
+
+li{
+    list-style-type: none;
+}
+
+/* CONFIGURAMOS ANCLAS SUAVES */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* DESACTIVAMOS ESTILOS POR DEFECTO EN LAS PRINCIPALES ETIQUETAS DE TEXTO */
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CONFIGURAMOS EL TEXTO QUE SELECCIONAMOS */
+
+::selection {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+/* NIVELAMOS PROBLEMAS DE TIPOGRAFÍAS Y COLOCACIÓN DE FORMULARIOS */
+
+form, input, textarea, select, button, label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto; /* esto es para el texto cuando está muy largo se le pone un guión para luego continuar */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+}
+
+/* CONFIGURAMOS LA TIPOGRAFÍA PARA TODA LA WEB */
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipo-principal);
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+}

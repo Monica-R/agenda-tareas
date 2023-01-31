@@ -1,0 +1,77 @@
+@import url('reset.css');
+@import url('index.css');
+
+body {
+    width: 100%;
+    background-image: url('../img/fondo-hojas.jpg');
+    background-position: top bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+
+/* CUERPO PRINCIPAL */
+
+.main__form {
+    width: 40%;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main__title {
+    font-size: calc(1em + 1vw);
+    color: var(--primer-color);
+}
+
+form {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    justify-content: center;
+    font-family: var(--tipo-secundario);
+}
+
+input, label {
+    width: 100%;
+    font-size: calc(.8em + .8vw);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    color: var(--primer-color);
+}
+
+input {
+    padding-left: 2%;
+    border: .1em solid var(--segundo-color);
+    border-radius: .2em;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    -ms-border-radius: .2em;
+    -o-border-radius: .2em;
+    font-size: calc(.6em + .6vw);
+}
+
+input:focus {
+    outline: .1em solid var(--primer-color);
+}
+
+input[type="submit"]{
+    width: 50%;
+    justify-self: center;
+    margin-top: 2%;
+    cursor: pointer;
+    color: var(--primer-color);
+    font-size: calc(.8em + .8vw);
+}
+
+
+.message__p{
+    font-family: var(--tipo-secundario);
+}

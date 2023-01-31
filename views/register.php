@@ -1,6 +1,6 @@
 <?php 
     use Views\components\Header;
-    Header::header();
+    Header::header('register');
     
     require_once '../controller/UserController.php';
 ?>
@@ -20,23 +20,28 @@
     }
 ?>
 <header class="header">
-    <h1 class="header__h1">Unirse</h1>
-    <a href="login">Entrar</a>
+    <nav class="header__nav">
+        <p class="header__p">Already have an account?</p>
+        <a class="header__a"href="login">Log in</a>
+    </nav>
 </header>
 
 <main class="main">
-    <form action="register" method="post" class="form">
-        <label for="name">Nombre</label>
-        <input type="text" name="name"/>
-
-        <label for="email">Correo</label>
-        <input type="text" name="email"/>
-
-        <label for="pass">Contraseña</label>
-        <input type="text" name="pass"/>
-
-        <input type="submit" name="submit" value="Crear cuenta">
-    </form>
+    <div class="main__form">
+        <h2 class="main__title">Create your account</h2>
+        <form action="register" method="post" class="form">
+            <label for="name">Username</label>
+            <input type="text" name="name" required />
+    
+            <label for="email">Email</label>
+            <input type="text" name="email" required />
+    
+            <label for="pass">Password</label>
+            <input type="text" name="pass" required />
+    
+            <input type="submit" name="submit" value="Create">
+        </form>
+    </div>
 </main>
 <?php 
     use Views\components\Footer;

@@ -1,0 +1,96 @@
+@import url('reset.css');
+
+body {
+    width: 100%;
+    background-image: url('../img/fondo-hojas.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* CABECERA */
+
+.header {
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    justify-content: end;
+}
+
+.header__nav {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__p {
+    font-size: calc(.8em + .8vw);
+    color: var(--primer-color);
+}
+
+.header__a,
+.main__a {
+    width: 30%;
+    font-family: var(--tipo-secundario);
+    font-size: calc(.8em + .8vw);
+    font-weight: bold;
+    color: var(--primer-color);
+    padding: 2%;
+    border: 2px solid var(--segundo-color);
+    text-align: center;
+}
+
+/* CUERPO PRINCIPAL */
+
+.main {
+    width: 100%;
+    height: 74vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__card {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__h1{
+    font-size: calc(5em + 5vw);
+    color: var(--primer-color);
+}
+
+.main__h1--color{
+    color: var(--segundo-color);
+    letter-spacing: -.2rem;
+}
+
+.main__p {
+    font-family: var(--tipo-secundario);
+    font-size: calc(1em + 1vw);
+    font-weight: lighter;
+    color: var(--primer-color);
+    margin-top: -4%;
+    margin-bottom: 3%;
+}
+
+.footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--tipo-secundario);
+    color: var(--primer-color);
+    font-weight: bold;
+}
+
+.footer__item {
+    background-color: var(--cuarto-color);
+}
+
+.fa-heart{
+    color: green;
+}
