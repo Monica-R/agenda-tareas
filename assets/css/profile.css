@@ -1,6 +1,9 @@
 
 body {
     width: 100%;
+    background-image: url('../img/fondo-hojas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header {
@@ -9,7 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: var(--cuarto-color);
-    box-shadow: .1em .1em .2em var(--cuarto-color);
+    box-shadow: .1em .1em 0em var(--cuarto-color);
 }
 
 .header__nav{
@@ -21,8 +24,16 @@ body {
 
 .header__a {
     font-size: calc(.6em + .6vw);
-    padding: 4%;
-    border: 2px solid var(--primer-color);
+    padding: 2%;
+    border: .1em solid var(--tercer-color);
+    color: var(--tercer-color);
+    border-radius: .1em;
+}
+
+.header__a:hover {
+    background-color: var(--primer-color);
+    color: var(--tercer-color);
+    transition: all 500ms;
 }
 
 .header__div{
@@ -34,7 +45,7 @@ body {
 
 .main {
     width: 100%;
-    height: 76vh;
+    height: 80vh;
     padding-top: 2%;
     display: flex;
     flex-direction: column;
@@ -52,34 +63,48 @@ body {
 
 .form {
     width: 50%;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     column-gap: 5%;
     row-gap: 1em;
     justify-content: center;
     font-family: var(--tipo-secundario);
+    box-shadow: .2em .2em .4em var(--segundo-color);
+    padding: 2%;
 }
 
 .main__form {
-    width: 45%;
+    width: 30%;
     color: var(--primer-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .main__form--description,
 .main__form--title{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__form--description label,
+.main__form--title label{
+    width: 80%;
 }
 
 .main__form--description input,
 .main__form--description label,
 .main__form--title label,
 .main__form--title input{
-    margin-left: 2%;
     font-size: calc(.7em + .7vw);
 }
 
 .main__form--description input,
 .main__form--title input{
+    width: 80%;
     border: .1em solid var(--segundo-color);
     outline: none;
     padding: 1%;
@@ -99,7 +124,15 @@ input[type="submit"] {
     width: 30%;
     height: calc(2em + 2vh);
     border: .2em solid var(--segundo-color);
+    text-transform: uppercase;
     cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primer-color);
+    color: var(--tercer-color);
+    transform: scale(.9);
+    transition: all 800ms;
 }
 
 .footer {

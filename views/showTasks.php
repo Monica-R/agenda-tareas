@@ -6,55 +6,58 @@
     $taskList = $tasks->readAllTasks();
 
 ?>
-<a href="logout">Cerrar sesión</a>
-<a href="profile">Volver a mi perfil</a>
-<div class="container">
-    <div>
-        <div>
-            <h2 >Mis tareas</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Título</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha creación</th>
-                        <th>Descripción</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        if (count($taskList) > 0){
-                            for($i = 0; $i < count($taskList); $i++){
-                                
+<header class="header">
+    <nav class="header__nav">
+        <a href="logout" class="header__a">Cerrar sesión</a>
+        <a href="profile" class="header__a">Volver a mi perfil</a>
+    </nav>
+</header>
+<main class="main__container">
+
+    <div class="main__div">
+        <h2 class="main__h2">Mis tareas</h2>
+        <table class="main__table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha creación</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    if (count($taskList) > 0){
+                        for($i = 0; $i < count($taskList); $i++){
+                            
+                ?>
+                <tr>
+                    <td><?php echo $taskList[$i]["task_id"] ?></td>
+                    <td><?php echo $taskList[$i]["title"] ?></td>
+                    <td><?php echo $taskList[$i]["input_date"] ?></td>
+                    <td><?php echo $taskList[$i]["creation_date"] ?></td>
+                    <td><?php echo $taskList[$i]["description"] ?></td>
+                    <?php 
+                        $status = (new TaskController)->getStatus($taskList[$i]["task_id"]); 
+                        echo $status ? "<td style='background-color:green;'></td>" : "<td style='background-color:tomato;'></td>";
                     ?>
-                    <tr>
-                        <td><?php echo $taskList[$i]["task_id"] ?></td>
-                        <td><?php echo $taskList[$i]["title"] ?></td>
-                        <td><?php echo $taskList[$i]["input_date"] ?></td>
-                        <td><?php echo $taskList[$i]["creation_date"] ?></td>
-                        <td><?php echo $taskList[$i]["description"] ?></td>
-                        <?php 
-                            $status = (new TaskController)->getStatus($taskList[$i]["task_id"]); 
-                            echo $status ? "<td style='background-color:green;'></td>" : "<td style='background-color:tomato;'></td>";
-                        ?>
-                        <td>
-                            <a href="complete/<?= $taskList[$i]['task_id'] ?>">Marcar</a>
-                            <a href="delete/<?= $taskList[$i]['task_id'] ?>">Borrar</a>
-                            <a href="edit/<?= $taskList[$i]['task_id'] ?>">Actualizar</a>                          
-                        </td>
-                    </tr>
-                    <?php
-                            }
+                    <td>
+                        <a href="complete/<?= $taskList[$i]['task_id'] ?>">Marcar</a>
+                        <a href="delete/<?= $taskList[$i]['task_id'] ?>">Borrar</a>
+                        <a href="edit/<?= $taskList[$i]['task_id'] ?>">Actualizar</a>                          
+                    </td>
+                </tr>
+                <?php
                         }
-                    ?>
-                </tbody>
-            </table>
-        </div>
+                    }
+                ?>
+            </tbody>
+        </table>
     </div>
-</div>
+</main>
 
 <?php 
     use Views\components\Footer;

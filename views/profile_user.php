@@ -24,7 +24,7 @@
     </nav>
     <div class="header__div">
         <a href="config" class="header__a"><?php echo 'Hi, ' . $_SESSION["user"][1]; ?></a>
-        <a href="logout">Logout</a>
+        <a href="logout" class="header__a">Logout</a>
     </div>
 </div>
 
