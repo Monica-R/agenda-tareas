@@ -1,10 +1,13 @@
 <?php
 /**
- * AQUÍ VA LO RELACIONADO CON EL PERFIL DE ADMINISTRADOR:
- * SE CREA UNA CUENTA EN LA BASE DE DATOS
- * ESTA PÁGINA QUEDA OCULTA, SÓLO QUIENES CONOCEN el nombre del mismo lo saben
- * UNA VEZ QUE EL ADMINISTRADOR ENTRA CON SU CUENTA, TENDRÁ LOS PRIVILEGIOS DE
- * ELIMINAR, EDITAR CONSULTAR Y AÑADIR USUARIO SIEMPRE QUE NECESITE
- * 
+ * PÁGINA DE ERROR 404: NO ENCONTRADA
  */
+    use Views\components\Header;
+    Header::header('default');
+?>
+
+
+<?php 
+    use Views\Components\Footer;
+    Footer::footer();
 ?>
