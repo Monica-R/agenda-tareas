@@ -55,7 +55,7 @@
             
         }
 
-        public function updateUser(){
+        public function updateUser($user_id){
             $messageLog = [
                 "message" => "Tu cuenta de usuario se ha actualizado correctamente.",
                 "error" => false
@@ -67,12 +67,15 @@
                 $update = "UPDATE users SET username=:username, email=:email, passwd=:passwd 
                             WHERE user_id=:user_id";
                 $query = $this->connection->prepare($update);
-                $query->execute([
-                    ":user_id" => $_REQUEST["id"],
-                    ":username" => $_REQUEST["name"],
-                    ":email" => $_REQUEST["email"],
-                    ":passwd" => $_REQUEST["password"]
-                ]);
+                $query->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+                $query->bindValue(":username", $_REQUEST["name"], \PDO::PARAM_STR);
+                $query->bindValue(":email", $_REQUEST["email"], \PDO::PARAM_STR);
+                $query->bindValue(":passwd", $_REQUEST["pass"], \PDO::PARAM_STR);
+                $query->execute();
+                $email = $_REQUEST["email"];
+            
+                $_SESSION["user"][1] = $email;
+            
             } catch (PDOException $error){
                 $messageLog["error"] = true;
                 $messageLog["message"] = $error->getMessage();
@@ -82,28 +85,22 @@
             }
         }
 
-        public function deleteUser(){
-            $messageLog = [
-                "message" => "Tu cuenta de usuario se ha eliminado correctamente.",
-                "error" => false
-            ];
+        public function deleteUser($user_id){
+            $delete_tasks = "DELETE FROM task WHERE user_ID=:user_id";
+            $query_tasks = $this->connection->prepare($delete_tasks);
+            $query_tasks->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+            $query_tasks->execute();
 
-            $_SESSION['message'] = $messageLog;
 
-            try{
-                $delete = "DELETE FROM users WHERE user_id=:user_id";
-                $query = $this->connection->prepare($delete);
-                $query->execute([
-                    ":user_id" => $_REQUEST["id"],
-                ]);
+            $delete_user = "DELETE FROM users WHERE user_id = :user_id";
+            $query = $this->connection->prepare($delete_user);
+            $query->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+            $query->execute();
 
-            } catch (PDOException $error){
-                $messageLog["error"] = true;
-                $messageLog["message"] = $error->getMessage();
-
-                //registrar el error
-                error_log($error->getMessage());
-            }
+            //NOTA: PARA ELIMINAR EL USUARIO PRIMERO DEBES ELIMINAR TODAS SUS TAREAS
+            //AQUÍ NO SIRVE EL INNER/LEFT/RIGHT JOIN
+            session_destroy();
+            header("refresh: 0, url = index");
         }
 
         public function readAllUsers(){

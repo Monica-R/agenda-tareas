@@ -1,6 +1,6 @@
 <?php 
     use Views\Components\Header;
-    Header::header('profile');   
+    Header::header('profile');
 ?>
 
 <?php
@@ -23,7 +23,7 @@
         <a class="header__a" href="tasks">Show tasks</a>
     </nav>
     <div class="header__div">
-        <p class="header__p"><?php echo 'Hi, ' . $_SESSION["user"][1]; ?></p>
+        <a href="config" class="header__a"><?php echo 'Hi, ' . $_SESSION["user"][1]; ?></a>
         <a href="logout">Logout</a>
     </div>
 </div>

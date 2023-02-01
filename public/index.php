@@ -65,8 +65,16 @@
             require_once '../views/editTask.php';
             break;
 
+        case 'config':
+            require_once '../views/config.php';
+            break;
+
         case 'logout':     
             (new LoginController)->logout();
+            break;
+        
+        case 'close':
+            (new UserController)->deleteUser($_SESSION["user"][0]);
             break;
 
         default:
