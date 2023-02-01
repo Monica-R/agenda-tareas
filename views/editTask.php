@@ -1,7 +1,7 @@
 <?php 
     use Views\components\Header;
     use Controller\TaskController;
-    Header::header();
+    Header::header('edit');
     $getURL = $_SERVER['REQUEST_URI']; //te da la URL teniendo en cuenta la "personalización" de los URL's
 
     $url = explode('/', $getURL);
@@ -29,19 +29,19 @@
     <label for="id">ID</label>
     <input type="text" readonly name="id" value="<?= $lastValue ?>">
 
-    <label for="title">Título</label>
+    <label for="title">Title</label>
     <input type="text" name="title"/>
 
-    <label for="init_date">Fecha de inicio</label>
+    <label for="init_date">Start date</label>
     <input type="date" name="init_date"/>
 
-    <label for="end_date">Fecha de fin</label>
+    <label for="end_date">Ends on</label>
     <input type="date" name="end_date"/>
 
-    <label for="description">Descripción</label>
+    <label for="description">Description</label>
     <input type="text" name="description"/>
 
-    <input type="submit" name="editSubmit" value="Editar tarea">
+    <input type="submit" name="editSubmit" value="Edit">
 </form>
 
 <?php 
