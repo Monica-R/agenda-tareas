@@ -55,10 +55,10 @@
         }
 
         // Function Read tasks {#3be, 7}
-        public function readAllTasks(){
+        public function readAllTasks($userId){
             $query = $this->connection->prepare("SELECT * FROM task
-                                                INNER JOIN users
-                                                ON task.user_ID = users.user_id");
+                                                WHERE task.user_ID =:user_ID");
+            $query->bindValue(":user_ID", $userId, \PDO::PARAM_INT);
             $query->execute();
             return $query->fetchAll();
         }

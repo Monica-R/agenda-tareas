@@ -3,7 +3,7 @@
     use Views\components\Header;
     Header::header('tasks');
     $tasks = new TaskController();
-    $taskList = $tasks->readAllTasks();
+    $taskList = $tasks->readAllTasks($_SESSION["user"][0]);
 
 ?>
 <header class="header">
@@ -19,7 +19,6 @@
         <table class="main__table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Title</th>
                     <th>Start date</th>
                     <th>Ends on</th>
@@ -36,7 +35,6 @@
                             
                 ?>
                 <tr>
-                    <td><?php echo $taskList[$i]["task_id"] ?></td>
                     <td><?php echo $taskList[$i]["title"] ?></td>
                     <td><?php echo $taskList[$i]["input_date"] ?></td>
                     <td><?php echo $taskList[$i]["expiration_date"] ?></td>
