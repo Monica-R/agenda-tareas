@@ -24,24 +24,12 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Monica-R/agenda-tareas?style=for-the-badge)
 
 
+## Mejoras a realizar 
 
-## Uso
-
-Mostraré un ejemplo del código desarrollado, en este caso, el de eliminar tareas del usuario
-
-````=php
-    class TaskController {
-        public function deleteTask($task_id){
-
-            $delete = "DELETE FROM task WHERE task_id=:task_id";
-            $query = $this->connection->prepare($delete);
-            $query->bindValue(':task_id', $task_id, \PDO::PARAM_INT);
-            $query->execute();
-
-        }
-    }
-
-````
+- Desarrollo de las validaciones en los campos del formulario.
+- Muestreo de los mensajes de confirmación (para añadir tarea, editar, ajustes de la cuenta...)
+- Modo administrador
+- Mejorar el modo responsivo de la aplicación
 
 
 ## Autora
