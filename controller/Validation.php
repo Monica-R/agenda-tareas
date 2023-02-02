@@ -1,6 +1,9 @@
 <?php
 
     require_once '../views/register.php' ;
+    /**
+     * AVISO: esta clase NO se está usando.
+     */
 
     class Validation {
         public static function confirm(){

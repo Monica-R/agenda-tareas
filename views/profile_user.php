@@ -29,7 +29,7 @@
 </div>
 
 <main class="main">
-    <h2 class="main__title">Edit task</h2>
+    <h2 class="main__title">Create task</h2>
     <form action="profile" class="form" method="POST">
 
         <div class="main__form--title">

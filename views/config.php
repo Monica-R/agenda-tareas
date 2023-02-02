@@ -1,5 +1,5 @@
 <?php 
-    use Views\components\Header;
+    use Views\Components\Header;
     use Controller\UserController;
     Header::header('config');
     

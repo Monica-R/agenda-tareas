@@ -9,14 +9,15 @@
 
     class TaskController {
         private $connection;
-
+        //En el constructor, creo una instancia de la clase Connection
+        //Y que esa conexión llame al método del modelo para conectarse a la BBDD
         public function __construct()
         {
             $instanceTask = new Connection();
             $this->connection = $instanceTask->getConnection();
         }
 
-        // Function Create task {#17d,36}
+        
         public function createTask(){
             $messageLog = [
                 "message" => "Tu tarea se ha creado correctamente.",
@@ -26,9 +27,12 @@
             $_SESSION['message'] = $messageLog;
 
             try{
+                //Si la sesión del usuario está iniciada, guárdame el id del usuario en la variable $id
                 if (isset($_SESSION["user"])){
                     $id = $_SESSION["user"][0];
                 }
+
+                //Asigno variables para recoger los valores del formulario
                 $title = $_REQUEST["title"];
                 $initDate = $_REQUEST["init_date"];
                 $endDate = $_REQUEST["end_date"];
@@ -40,9 +44,12 @@
                 $endDate = $this->connection->quote($endDate);
                 $description = $this->connection->quote($description);
 
+                //Realizo la consulta para insertar
                 $insert = "INSERT INTO task (title, input_date, expiration_date, description, user_ID) 
                         VALUES ($title, $initDate, $endDate, $description, $id)";
+                //Preparo la conexión
                 $query = $this->connection->prepare($insert);
+                //La ejecuto
                 $query->execute();
 
             } catch (\PDOException $error) {
@@ -54,16 +61,21 @@
             }
         }
 
-        // Function Read tasks {#3be, 7}
+        
         public function readAllTasks($userId){
+            //Preparo la conexión para buscar todas las tareas del usuario
             $query = $this->connection->prepare("SELECT * FROM task
                                                 WHERE task.user_ID =:user_ID");
+            
+            //Enlazo el parámetro user_Id de la función con los parámetros de la consulta con bindValue
             $query->bindValue(":user_ID", $userId, \PDO::PARAM_INT);
+            //Ejecuto
             $query->execute();
+            //Devuelvo el resultado
             return $query->fetchAll();
         }
 
-        // Function Update task {#666, 28}
+        
         public function updateTask($task_id){
             $messageLog = [
                 "message" => "Tarea actualizada.",
@@ -93,7 +105,7 @@
             }
         }
         
-        // Function Delete task {#ddb, 8}
+        
         public function deleteTask($task_id){
 
             $delete = "DELETE FROM task WHERE task_id=:task_id";
@@ -104,6 +116,7 @@
         }
         
         public function changeStatus($task_id){
+            //Preparo la conexión a la bbdd actualizando el estado de la tarea
             $query = $this->connection->prepare("UPDATE task 
                                                 SET status = NOT status
                                                 WHERE task_id = :task_id");

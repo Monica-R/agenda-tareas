@@ -2,7 +2,12 @@
 /**
  * @author Monica Roka
  * @param Header
- * @return 
+ * @return
+ * En este archivo he creado una clase Header, con un método estático al que se le pasa 
+ * un parámentro,
+ * que es la ruta personalizada (ver index.php de la carpeta public, en el switch)
+ * Dependiendo de la ruta que tome el usuario, pintará el header correspondiente.
+ * Esta clase la llamo a través de las vistas gracias al autoload de Composer.
  */
     namespace Views\Components;
     class Header{

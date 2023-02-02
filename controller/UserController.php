@@ -103,6 +103,7 @@
             header("refresh: 0, url = index");
         }
 
+        //ESTE MÉTODO NO SE ESTÁ USANDO, normalmente sólo el administrador puede dar uso de ello
         public function readAllUsers(){
             //realizo una consulta a la BBDD
             $query = $this->connection->prepare("SELECT * FROM users");
