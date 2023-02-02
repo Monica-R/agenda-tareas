@@ -1,4 +1,4 @@
-# Onestack
+# Onetask
 
 Una aplicación CRUD sobre una agenda de tareas con PHP, MVC, POO; un usuario registrado puede crear tareas, gestionarlas (editar, borrar tareas), y configurar su cuenta.
 
