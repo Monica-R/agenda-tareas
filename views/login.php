@@ -5,7 +5,7 @@
 
 <header class="header">
     <nav class="header__nav">
-        <h1 class="header__h1"><\app_title\></h1>
+        <h1 class="header__h1 header__h1--login">One<span>t</span>ask</h1>
         <a href="index" class="header__a">Volver</a>
     </nav>
 </header>

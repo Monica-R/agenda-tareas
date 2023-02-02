@@ -25,11 +25,10 @@
 ?>
 
 <main class="main">
-    <h2 class="main__title">What do you want to do?</h2>
-    <form action="tasks" class="form" method="POST">
+    <form action="tasks" class="form form--edit" method="POST">
+        <h2 class="main__title">Edit task</h2>
 
-        <label for="id">ID</label>
-        <input type="text" readonly name="id" value="<?= $lastValue ?>">
+        <input type="hidden" readonly name="id" value="<?= $lastValue ?>">
 
         <label for="title">Title</label>
         <input type="text" name="title"/>
