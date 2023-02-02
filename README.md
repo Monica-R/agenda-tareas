@@ -50,5 +50,5 @@ Mostraré un ejemplo del código desarrollado, en este caso, el de eliminar tare
 
 ## Licencia
 
-Esta aplicación usa la licencia MIT. Para más info mirar en ![](https://github.com/Monica-R/agenda-tareas/blob/main/LICENSE)
+Esta aplicación usa la licencia MIT. Para más info mirar en [LICENSE MIT](https://github.com/Monica-R/agenda-tareas/blob/main/LICENSE)
 
