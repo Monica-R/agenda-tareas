@@ -1,0 +1,9 @@
+@import url('profile.css');
+
+body {
+    background-color: red;
+}
+
+.main {
+    background-color: blue;
+}

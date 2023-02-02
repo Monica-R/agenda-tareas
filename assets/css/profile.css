@@ -28,12 +28,13 @@ body {
     border: .1em solid var(--tercer-color);
     color: var(--tercer-color);
     border-radius: .1em;
+    transition-property: background-color;
+    transition-duration: 500ms;
 }
 
 .header__a:hover {
     background-color: var(--primer-color);
     color: var(--tercer-color);
-    transition: all 500ms;
 }
 
 .header__div{
@@ -126,13 +127,14 @@ input[type="submit"] {
     border: .2em solid var(--segundo-color);
     text-transform: uppercase;
     cursor: pointer;
+    transition-property: background-color, color, transform;
+    transition-duration: 400ms;
 }
 
 input[type="submit"]:hover {
     background-color: var(--primer-color);
     color: var(--tercer-color);
     transform: scale(.9);
-    transition: all 800ms;
 }
 
 .footer {

@@ -6,7 +6,7 @@
             </body>
                 <footer class="footer">
                     <div class="footer__item">
-                        Desarrollado con <i class="fa-sharp fa-solid fa-heart"></i> por Mónica Roka
+                        Developed with <i class="fa-sharp fa-solid fa-heart"></i> by Mónica Roka
                     </div>
                 </footer>
             </html>

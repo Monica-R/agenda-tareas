@@ -6,6 +6,11 @@ body {
     background-size: cover;
 }
 
+.header__nav--profile{
+    width: 30%;
+    justify-content: space-evenly;
+}
+
 .main__container {
     width: 100%;
     height: 80vh;
@@ -41,7 +46,32 @@ body {
 .main__table tr td {
     font-family: var(--tipo-secundario);
     font-size: calc(.7em + .7vw);
+    font-weight: 500;
+    color: var(--color-primario);
     border-bottom: .2em solid var(--segundo-color);
     text-align: center;
     vertical-align: middle;
+}
+
+.table__a--buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.table__a--buttons a:hover{
+    color: burlywood;
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 48
 }
