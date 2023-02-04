@@ -7,7 +7,7 @@
      * tomar la conexión con el método getConnection() de la clase Connection
      */
 
-    namespace Controller;
+    namespace Controllers;
     use Models\Connection;
 
     use PDOException;

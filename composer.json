@@ -4,9 +4,9 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Views\\" : "views/",
+            "Views\\" : "Views/",
             "Models\\" : "models/",
-            "Controller\\" : "controller/"
+            "Controllers\\" : "controller/"
         }
     },
     "authors": [

@@ -4,7 +4,7 @@
      * 
     */
 
-    namespace Controller;
+    namespace Controllers;
     use Models\Connection;
 
     class TaskController {

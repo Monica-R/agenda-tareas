@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../views/register.php' ;
+    require_once '../Views/register.php' ;
     /**
      * AVISO: esta clase NO se está usando.
      */

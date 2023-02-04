@@ -3,7 +3,7 @@
      * @author Monica Roka
      */
 
-    namespace Controller;
+    namespace Controllers;
     use Models\Connection;
     
     class LoginController {

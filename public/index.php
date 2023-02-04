@@ -12,9 +12,9 @@
     session_start();
 
     // Use the Controller classes
-    use Controller\UserController;
-    use Controller\LoginController;
-    use Controller\TaskController;
+    use Controllers\UserController;
+    use Controllers\LoginController;
+    use Controllers\TaskController;
     
     // Get the `slug` from the URL, splitting it by `/` and storing it in an array
     $slug = $_GET['slug'] ?? '';
@@ -35,12 +35,12 @@
         case "/":
         case "index":
             // If the resource is `/` or `index`, include the `index.php` view file
-            require_once '../views/index.php';
+            require_once '../Views/index.php';
             break;
 
         case 'register':
             // If the resource is `register`, include the `register.php` view file
-            require_once '../views/register.php';
+            require_once '../Views/register.php';
 
             // If a POST request is made, create a user using the `createUser` method of the `UserController` instance
             if($_POST){
@@ -50,7 +50,7 @@
 
         case 'login':
             // If the resource is `login`, include the `login.php` view file
-            require_once '../views/login.php';
+            require_once '../Views/login.php';
             // If a POST request is made, login using the `login` method of the `LoginController` instance, passing the email and password from the request
             if($_POST){
                 $user1->login($_REQUEST["email"], $_REQUEST["pass"]);
@@ -59,7 +59,7 @@
             
         case 'profile':
             // If the resource is `profile`, include the `profile_user.php` view file
-            require_once '../views/profile_user.php';
+            require_once '../Views/profile_user.php';
             // If a POST request is made, create a task using the `createTask` method of the `TaskController` instance
             if($_POST){
                 $task->createTask();
@@ -67,7 +67,7 @@
             break;
 
         case 'tasks':
-            require_once '../views/showTasks.php';
+            require_once '../Views/showTasks.php';
             break;
 
         case 'complete':
@@ -83,11 +83,11 @@
             break;
 
         case 'edit':
-            require_once '../views/editTask.php';
+            require_once '../Views/editTask.php';
             break;
 
         case 'config':
-            require_once '../views/config.php';
+            require_once '../Views/config.php';
             break;
 
         case 'logout':     
@@ -100,7 +100,7 @@
             break;
 
         default:
-            require_once '../views/error.php';
+            require_once '../Views/error.php';
 
     }
 ?>
