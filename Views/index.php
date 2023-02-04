@@ -22,7 +22,7 @@
 </main>
 
 <?php
-    use Views\components\Footer;
+    use Views\Components\Footer;
 
     Footer::footer();
 ?>
