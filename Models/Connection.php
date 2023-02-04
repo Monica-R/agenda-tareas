@@ -12,7 +12,7 @@ Class Connection {
         $username = 'monica-r';
         $password = 'daw123';
         $server = 'localhost';
-        $dbname = 'Schedule';
+        $dbname = 'schedule';
         $charset = 'utf8mb4';
         $options = [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
