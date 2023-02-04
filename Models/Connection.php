@@ -9,10 +9,10 @@ Class Connection {
     }
 
     private function setConnection(){
-        $username = 'monica-r';
-        $password = 'daw123';
-        $server = 'localhost';
-        $dbname = 'schedule';
+        // $username = '';
+        // $password = 'daw123';
+        $server = $_ENV["DB_HOST"];
+        $dbname = $_ENV["DB_DB"];
         $charset = 'utf8mb4';
         $options = [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
@@ -20,7 +20,7 @@ Class Connection {
             \PDO::ATTR_EMULATE_PREPARES => false
         ];
 
-        $connection = new \PDO("mysql:host=$server;dbname=$dbname;charset=$charset", $username, $password, $options);
+        $connection = new \PDO("mysql:host=$server;dbname=$dbname;charset=$charset", $_ENV["DB_USER"], $_ENV["DB_PASS"], $options);
         $this->connection=$connection;
 
     }
