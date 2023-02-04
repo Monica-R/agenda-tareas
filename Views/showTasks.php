@@ -1,6 +1,6 @@
 <?php
     use Controllers\TaskController;
-    use Views\components\Header;
+    use Views\Components\Header;
     Header::header('tasks');
     $tasks = new TaskController();
     $taskList = $tasks->readAllTasks($_SESSION["user"][0]);

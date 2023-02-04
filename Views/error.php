@@ -2,7 +2,7 @@
 /**
  * PÁGINA DE ERROR 404: NO ENCONTRADA
  */
-    use Views\components\Header;
+    use Views\Components\Header;
     Header::header('default');
 ?>
 

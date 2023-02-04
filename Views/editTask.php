@@ -1,5 +1,5 @@
 <?php 
-    use Views\components\Header;
+    use Views\Components\Header;
     use Controllers\TaskController;
     Header::header("edit");
     $getURL = $_SERVER['REQUEST_URI']; //te da la URL teniendo en cuenta la "personalización" de los URL's

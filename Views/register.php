@@ -1,5 +1,5 @@
 <?php 
-    use Views\components\Header;
+    use Views\Components\Header;
     Header::header('register');
     
     require_once '../controller/UserController.php';

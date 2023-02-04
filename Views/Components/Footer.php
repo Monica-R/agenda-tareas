@@ -4,7 +4,7 @@
  * a todas las vistas.
  * Esta clase la llamo a través de las vistas gracias al autoload de Composer.
  */
-    namespace Views\components;
+    namespace Views\Components;
     class Footer{
         public static function footer(){
             print <<<HTML
