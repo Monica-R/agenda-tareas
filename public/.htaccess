@@ -6,3 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?slug=$1 [L]
 
 AddType text/css .css
+
+<FilesMatch "\.(css)$">
+   Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
