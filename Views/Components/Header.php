@@ -17,7 +17,7 @@
                 case 'index':
                     print <<<HTML
                         <!DOCTYPE html>
-                        <html lang="es">
+                        <html lang="en">
                         <head>
                             <meta charset="UTF-8">
                             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +34,7 @@
                 case 'login':
                     print <<<HTML
                         <!DOCTYPE html>
-                        <html lang="es">
+                        <html lang="en">
                         <head>
                             <meta charset="UTF-8">
                             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,7 +51,7 @@
                 case 'register':
                     print <<<HTML
                     <!DOCTYPE html>
-                    <html lang="es">
+                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +68,7 @@
                 case 'profile':
                     print <<<HTML
                     <!DOCTYPE html>
-                    <html lang="es">
+                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,7 +85,7 @@
                 case 'tasks':
                     print <<<HTML
                     <!DOCTYPE html>
-                    <html lang="es">
+                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,7 +103,7 @@
                 case 'edit':
                     print <<<HTML
                     <!DOCTYPE html>
-                    <html lang="es">
+                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -228,7 +228,7 @@
                 case 'config':
                     print <<<HTML
                     <!DOCTYPE html>
-                    <html lang="es">
+                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -245,7 +245,7 @@
                 default:
                     print <<<HTML
                     <!DOCTYPE html>
-                    <html lang="es">
+                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
