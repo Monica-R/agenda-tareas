@@ -13,7 +13,7 @@
 
     class Header{
         public static function header($ruta){
-            $BASE_URL = 'https://onetask.herokuapp.com/';
+            $BASE_URL = 'https://onetask.herokuapp.com';
             switch($ruta){
                 case '/':
                 case 'index':
