@@ -38,7 +38,7 @@
             require_once '../Views/index.php';
             break;
 
-        case 'register':
+        case "register":
             // If the resource is `register`, include the `register.php` view file
             require_once '../Views/register.php';
 
@@ -48,7 +48,7 @@
             }
             break;
 
-        case 'login':
+        case "login":
             // If the resource is `login`, include the `login.php` view file
             require_once '../Views/login.php';
             // If a POST request is made, login using the `login` method of the `LoginController` instance, passing the email and password from the request
@@ -57,7 +57,7 @@
             }
             break;
             
-        case 'profile':
+        case "profile":
             // If the resource is `profile`, include the `profile_user.php` view file
             require_once '../Views/profile_user.php';
             // If a POST request is made, create a task using the `createTask` method of the `TaskController` instance
@@ -66,23 +66,23 @@
             }
             break;
 
-        case 'tasks':
+        case "tasks":
             require_once '../Views/showTasks.php';
             break;
 
-        case 'complete':
+        case "complete":
             // If the resource is `complete`, change the task status using the `changeStatus` method of a new `TaskController` instance and redirect the user to the `tasks` resource
             (new TaskController)->changeStatus($id);
             header("refresh: 0; url = ../tasks");
             break;
             
-        case 'delete':
+        case "delete":
             // If the resource is `delete`, create a taskController instance using the `deleteTask` method.
             (new TaskController)->deleteTask($id);
             header("refresh: 0; url = ../tasks");
             break;
 
-        case 'edit':
+        case "edit":
             require_once '../Views/editTask.php';
             break;
 
@@ -90,11 +90,11 @@
             require_once '../Views/config.php';
             break;
 
-        case 'logout':     
+        case "logout":     
             (new LoginController)->logout();
             break;
         
-        case 'close':
+        case "close":
             // If the resource is `close`, create a userController instance using the `deleteUser` method..
             (new UserController)->deleteUser($_SESSION["user"][0]);
             break;

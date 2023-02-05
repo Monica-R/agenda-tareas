@@ -13,7 +13,6 @@
 
     class Header{
         public static function header($ruta){
-            $BASE_URL = 'https://onetask.herokuapp.com';
             switch($ruta){
                 case '/':
                 case 'index':
@@ -25,8 +24,8 @@
                             <meta http-equiv="X-UA-Compatible" content="IE=edge">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                            <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                            <link rel="stylesheet" type="text/css" href='{$BASE_URL}/public/assets/css/index.css'>
+                            <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                            <link rel="stylesheet" type="text/css" href='/assets/css/index.css'>
                             <title>Onetask | Agenda de tareas</title>
                         </head>
                         <body>
@@ -42,8 +41,8 @@
                             <meta http-equiv="X-UA-Compatible" content="IE=edge">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                            <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                            <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/login.css">
+                            <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                            <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
                             <title>Login | Onetask</title>
                         </head>
                         <body>
@@ -59,8 +58,8 @@
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/register.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/register.css">
                         <title>Create account | Onetask</title>
                     </head>
                     <body>
@@ -76,8 +75,8 @@
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/profile.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/profile.css">
                         <title>Profile | Onetask</title>
                     </head>
                     <body>
@@ -94,8 +93,8 @@
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/tasks.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/tasks.css">
                         <title>My tasks | Onetask</title>
                     </head>
                     <body>
@@ -236,8 +235,8 @@
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/config.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/config.css">
                         <title>Configuration | Onetask</title>
                     </head>
                     <body>
@@ -253,8 +252,8 @@
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/reset.css">
-                        <link rel="stylesheet" type="text/css" href="{$BASE_URL}/public/assets/css/error.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+                        <link rel="stylesheet" type="text/css" href="/assets/css/error.css">
                         <title>Error</title>
                     </head>
                     <body>
