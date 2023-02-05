@@ -1,7 +1,7 @@
 
 body {
     width: 100%;
-    background-image: url('../img/fondo-hojas.jpg');
+    background-image: url('/img/fondo-hojas.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }

@@ -1,6 +1,6 @@
 @import url('profile.css');
 body { 
-    background-image: url('../img/fondo-hojas.jpg');
+    background-image: url('/img/fondo-hojas.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
